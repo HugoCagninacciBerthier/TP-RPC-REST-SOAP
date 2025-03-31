@@ -7,7 +7,7 @@ Fais par : Arnaud.G, Celia.M, Hugo.C
 Ce projet implémente trois API (REST, SOAP et RPC) permettant de rechercher des entreprises par leur numéro SIREN à partir d'un fichier CSV contenant des données sur les entreprises.
 Les API sont implémentées en Python avec Flask et Flask-RESTx pour l'API REST, Flask avec Zeep pour l'API SOAP, et Flask avec Flask-JSONRPC pour l'API JSON-RPC.
 
-**Les scripts individuels sont dans chaque branche, nous avons fusionné tous les script dans un seul : ```api-general.py``` **
+Les scripts individuels sont dans chaque branche, nous avons fusionné tous les script dans un seul : ```api-general.py``` 
 
 ## Prérequis
 
