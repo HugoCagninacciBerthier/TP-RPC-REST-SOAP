@@ -68,6 +68,9 @@ curl -X GET "http://localhost:5000/siren/123456789"
 }
 ```
 
+#### Fonctionnement REST
+![Fonctionnement REST](rest.png)
+
 ### Lancement du serveur
 
 ```
@@ -123,6 +126,9 @@ Pour executer une requette HTTP GET, il faudra utiliser Postman, et précisé da
   </soap:Body>
 </soap:Envelope>
 ```
+#### Fonctionnement SOAP
+![Requette SOAP](soap-request.png)
+![Reponse SOAP](soap-reply.png)
 
 ### Lancement du serveur
 
@@ -203,4 +209,14 @@ Vous pouvez effectuer un appel JSON-RPC en envoyant une requête POST au point d
 
 L'API retourne les informations les plus récentes disponibles pour le SIREN recherché.
 
+#### Fonctionnement RPC
+![Fonctionnement du RPC](rpc.png)
+
+## 4\. SCRIPT GENERAL
+
+Le scrypt général est executable grace au script api-general.py.
+Pour qu'il fonctionne, il faudra faire la commande suivante :
+```
+pip install Flask Flask-RESTful pandas Flask-Swagger-UI Flask-JSONRPC zeep lxml
+```
 
