@@ -42,8 +42,8 @@ L'API permet d'obtenir des informations sur une entreprise à partir de son num�
 
 ### Utilisation
 
-Vous pouvez utiliser POSTMAN pour effectuer cette requête.
-Ou dans le navigateur web, et faire une requete HTTP tel que http://localhost:5000/siren/<siren>
+Vous pouvez utiliser POSTMAN pour effectuer cette requête HTTP GET.
+Ou dans le navigateur web, et faire une requete HTTP GET tel que http://localhost:5000/siren/<siren>
 
 #### Requête
 
@@ -89,15 +89,17 @@ L'API SOAP permet de récupérer les mêmes informations qu'avec l'API REST, mai
 
 ### Exemple d'utilisation
 
+Pour executer une requette HTTP GET, il faudra utiliser Postman, et précisé dans l'entete le Content-Type : text/xml et dans le body en RAW XML la requete ci-dessous.
+
 #### Requête SOAP (XML)
 
 ```
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-<soap:Body>
-<GetSiren>
-<siren>123456789</siren>
-</GetSiren>
-</soap:Body>
+    <soap:Body>
+        <GetSiren>
+            <siren>123456789</siren>
+        </GetSiren>
+    </soap:Body>
 </soap:Envelope>
 ```
 
@@ -125,7 +127,7 @@ L'API SOAP permet de récupérer les mêmes informations qu'avec l'API REST, mai
 ### Lancement du serveur
 
 ```
-python soap_api.py
+python API_SOAP.py
 ```
 
 L'API sera disponible à l'adresse http://localhost:8000.
@@ -149,13 +151,14 @@ pip install flask flask-jsonrpc pandas
 2. Lancer le serveur JSON-RPC :
 
 ```
-python jsonrpc_api.py
+python egapro-api-rpc.py
 ```
 
 Par défaut, l'API sera disponible à l'adresse http://localhost:5000/api.
 
 ### Appel de l'API
 
+Pour generer une requette HTTP, il faudra utiliser Postman, dans l'entete de fichier mettre le Content-Type à "application/json", puis dans le body en RAW JSON, la requete.
 Vous pouvez effectuer un appel JSON-RPC en envoyant une requête POST au point d'entrée `/api` avec le format suivant :
 
 #### Requête
@@ -199,13 +202,5 @@ Vous pouvez effectuer un appel JSON-RPC en envoyant une requête POST au point d
 ```
 
 L'API retourne les informations les plus récentes disponibles pour le SIREN recherché.
-
-### Lancement du serveur
-
-```
-python jsonrpc_api.py
-```
-
-L'API sera accessible via http://localhost:5000/api.
 
 
