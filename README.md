@@ -130,7 +130,7 @@ Pour executer une requette HTTP GET, il faudra utiliser Postman, et précisé da
 python API_SOAP.py
 ```
 
-L'API sera disponible à l'adresse http://localhost:8000.
+L'API sera disponible à l'adresse http://localhost:5000.
 
 ## 3\. API JSON-RPC
 
