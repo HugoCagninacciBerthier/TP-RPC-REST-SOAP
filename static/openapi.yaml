@@ -1,0 +1,74 @@
+openapi: 3.0.0
+info:
+  title: SIREN API
+  description: API pour rechercher une entreprise par SIREN
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+    description: Serveur local
+paths:
+  /siren/{siren_id}:
+    get:
+      summary: Recherche une entreprise par son numéro SIREN
+      description: Retourne les informations d'une entreprise en fonction de son SIREN
+      parameters:
+        - name: siren_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Numéro SIREN de l'entreprise
+      responses:
+        "200":
+          description: Informations de l'entreprise trouvée
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Année:
+                    type: integer
+                  Structure:
+                    type: string
+                  Tranche d'effectifs:
+                    type: string
+                  SIREN:
+                    type: string
+                  Raison Sociale:
+                    type: string
+                  Nom UES:
+                    type: string
+                  Entreprises UES (SIREN):
+                    type: string
+                  Région:
+                    type: string
+                  Département:
+                    type: string
+                  Pays:
+                    type: string
+                  Code NAF:
+                    type: string
+                  Note Ecart rémunération:
+                    type: integer
+                  Note Ecart taux d'augmentation (hors promotion):
+                    type: integer
+                  Note Ecart taux de promotion:
+                    type: integer
+                  Note Ecart taux d'augmentation:
+                    type: integer
+                  Note Retour congé maternité:
+                    type: integer
+                  Note Hautes rémunérations:
+                    type: integer
+                  Note Index:
+                    type: integer
+        "404":
+          description: SIREN non trouvé
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "SIREN non trouvé"
