@@ -214,7 +214,7 @@ L'API retourne les informations les plus récentes disponibles pour le SIREN rec
 
 ## 4\. SCRIPT GENERAL
 
-Le scrypt général est executable grace au script api-general.py.
+Le scrypt général est executable grace au script ```api-general.py```.
 Pour qu'il fonctionne, il faudra faire la commande suivante :
 ```
 pip install Flask Flask-RESTful pandas Flask-Swagger-UI Flask-JSONRPC zeep lxml
